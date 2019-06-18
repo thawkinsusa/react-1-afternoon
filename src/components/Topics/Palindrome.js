@@ -23,9 +23,9 @@ export default class Palindrome extends Component {
     this.setState({backwardSpelling: backwards})
    
     if ( forwards === backwards ) {
-      this.setState({ palindrome: 'true' });
+      this.setState({ palindrome: 'Yes' });
     } else {
-      this.setState({ palindrome: 'false' });
+      this.setState({ palindrome: 'No' });
     }
   }
   handleChange(val) {
@@ -37,7 +37,7 @@ export default class Palindrome extends Component {
         <h4> Is it spelled the same Forwards to Backwards? </h4>
         <input className="inputLine" onChange={ (e) => this.handleChange(e.target.value) }></input>
         <button className="confirmationButton" onClick={ () => this.isReversable(this.state.userInput) }> Check </button>
-        <span className="resultsBox"> Reversed: { JSON.stringify(this.state.backwardSpelling) }<br></br> Is is the same: { this.state.palindrome } </span>
+        <span className="resultsBox"> Compare: {JSON.stringify(this.state.userInput)}vs{ JSON.stringify(this.state.backwardSpelling) }<br></br> Is this the same: { this.state.palindrome } </span>
       </div>
     )
   }
